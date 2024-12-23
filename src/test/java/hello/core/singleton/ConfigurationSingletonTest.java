@@ -38,5 +38,9 @@ public class ConfigurationSingletonTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         AppConfig bean = ac.getBean(AppConfig.class);
         System.out.println("bean = " + bean.getClass());
+
+        MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
+        System.out.println("memberService = " + memberService.getClass());
+
     }
 }

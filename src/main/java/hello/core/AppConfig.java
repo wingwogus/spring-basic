@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
 
+
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+
     @Bean
     public MemberService memberService() {
         System.out.println("call AppConfig.memberService");
@@ -30,6 +34,7 @@ public class AppConfig {
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
